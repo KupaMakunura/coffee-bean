@@ -12,14 +12,14 @@ const MainSection = () => {
         </p>
         <div className="flex justify-center gap-4">
           <Link
-            href="#"
+            href="/shop"
             className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 focus:outline-none focus:ring-0 focus:ring-primary focus:ring-offset-2"
             prefetch={false}
           >
             Shop Now
           </Link>
           <Link
-            href="#"
+            href="/#about"
             className="inline-flex items-center justify-center rounded-md border border-primary bg-transparent px-6 py-3 text-sm font-medium text-primary transition-colors hover:bg-primary hover:text-primary-foreground focus:outline-none focus:ring-0 focus:ring-primary focus:ring-offset-2"
             prefetch={false}
           >
