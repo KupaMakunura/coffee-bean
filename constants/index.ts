@@ -1,52 +1,56 @@
 import { ShoppingItem } from "@/interfaces";
+import c1 from "@/public/images/c1.jpeg";
+import c2 from "@/public/images/c2.jpeg";
+import c3 from "@/public/images/c3.jpeg";
+import c4 from "@/public/images/c4.jpeg";
 
 // coffee constants
 export const coffeeItems: ShoppingItem[] = [
   {
     name: "Espresso",
-    img: "espresso.jpg",
+    img: c1,
     description: "Rich and bold shot",
     price: 3.0,
   },
   {
     name: "Latte",
-    img: "latte.jpg",
+    img: c2,
     description: "Smooth milk blend",
     price: 4.5,
   },
   {
     name: "Cappuccino",
-    img: "cappuccino.jpg",
+    img: c3,
     description: "Frothy and creamy",
     price: 4.0,
   },
   {
     name: "Americano",
-    img: "americano.jpg",
+    img: c4,
     description: "Strong and simple",
     price: 3.5,
   },
   {
     name: "Mocha",
-    img: "mocha.jpg",
+    img: c2,
     description: "Chocolate and coffee",
     price: 5.0,
   },
   {
     name: "Macchiato",
-    img: "macchiato.jpg",
+    img: c3,
     description: "Espresso with foam",
     price: 4.2,
   },
   {
     name: "Flat White",
-    img: "flat_white.jpg",
+    img: c4,
     description: "Silky smooth texture",
     price: 4.8,
   },
   {
     name: "Iced Coffee",
-    img: "iced_coffee.jpg",
+    img: c1,
     description: "Chilled and refreshing",
     price: 4.0,
   },

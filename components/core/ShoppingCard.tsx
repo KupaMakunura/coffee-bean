@@ -5,7 +5,7 @@ import { ShoppingItem } from "@/interfaces";
 
 const ShoppingCard = (props: ShoppingItem) => {
   return (
-    <Card>
+    <Card className="md:w-64 max-md:w-full">
       <Image
         src={props.img}
         alt="Coffee Blend 1"

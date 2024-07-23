@@ -1,6 +1,6 @@
 export interface ShoppingItem {
   name: string;
-  img: string;
+  img: any;
   description: string;
   price: number;
 }
