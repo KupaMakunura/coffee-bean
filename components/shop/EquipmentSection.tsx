@@ -1,19 +1,18 @@
-import React from "react";
-import { Button } from "../ui/button";
 import { Card, CardContent } from "../ui/card";
-import c1 from "@/public/images/c1.jpeg";
-import c2 from "@/public/images/c2.jpeg";
-import c3 from "@/public/images/c3.jpeg";
-import c4 from "@/public/images/c4.jpeg";
+import c1 from "@/public/images/e1.jpg";
+import c2 from "@/public/images/e2.jpg";
+import c3 from "@/public/images/e3.jpg";
+import c4 from "@/public/images/e4.jpg";
 import Image from "next/image";
+import { Button } from "../ui/button";
 
-const CoffeeSection = () => {
+const EquipmentSection = () => {
   return (
     <section className="py-12 md:py-16 lg:py-20">
       <div className="container mx-auto px-4 md:px-6 lg:px-10">
         <div className="flex w-full justify-center">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-8">
-            Coffee Blends
+            Brewing Equipment
           </h2>
         </div>
 
@@ -100,4 +99,4 @@ const CoffeeSection = () => {
   );
 };
 
-export default CoffeeSection;
+export default EquipmentSection;
