@@ -14,21 +14,21 @@ const AppNavBar = () => {
           </span>
         </Link>
         <div className="hidden md:flex space-x-5 items-center w-full justify-end">
-          <Link href="/" className="hover:text-primary transition-colors">
+          <Link href="/" className="hover:text-primary hover:font-semibold">
             Home
           </Link>
-          <Link href="/shop" className="hover:text-primary transition-colors">
+          <Link href="/shop" className="hover:text-primary hover:font-semibold">
             Shop
           </Link>
-          <Link href="#about" className="hover:text-primary transition-colors">
+          <Link href="/#about" className="hover:text-primary hover:font-semibold">
             About
           </Link>
-          <Link href="/events" className="hover:text-primary transition-colors">
+          <Link href="/events" className="hover:text-primary hover:font-semibold">
             Events
           </Link>
           <Link
-            href="#contact"
-            className="hover:text-primary transition-colors"
+            href="/#contact"
+            className="hover:text-primary hover:font-semibold"
           >
             Contact
           </Link>
@@ -70,7 +70,7 @@ const AppNavBar = () => {
                 </Link>
               </div>
               <div className="flex justify-end mt-12 w-full">
-                <Link href="#contact" className="text-sm  hover:text-primary">
+                <Link href="/#contact" className="text-sm  hover:text-primary">
                   Contact
                 </Link>
               </div>
