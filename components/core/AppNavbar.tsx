@@ -7,45 +7,28 @@ const AppNavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <Headroom>
-      <div className="flex w-full  h-[70px] py-3 px-3 shadow-md bg-white">
+      <div className="flex w-full  h-[70px] py-3 px-3 shadow-md bg-transparent">
         <Link href="/" className="w-full items-center flex space-x-2">
           <span className="md:text-lg max-md:text-base  font-semibold">
             Bean Boutique Coffee Shop
           </span>
         </Link>
         <div className="hidden md:flex space-x-5 items-center w-full justify-end">
-          <Link
-            href="/"
-            className="hover:text-primary transition-colors"
-            prefetch={false}
-          >
+          <Link href="/" className="hover:text-primary transition-colors">
             Home
           </Link>
-          <Link
-            href="#"
-            className="hover:text-primary transition-colors"
-            prefetch={false}
-          >
+          <Link href="/shop" className="hover:text-primary transition-colors">
             Shop
           </Link>
-          <Link
-            href="#"
-            className="hover:text-primary transition-colors"
-            prefetch={false}
-          >
+          <Link href="#about" className="hover:text-primary transition-colors">
             About
           </Link>
-          <Link
-            href="#"
-            className="hover:text-primary transition-colors"
-            prefetch={false}
-          >
+          <Link href="/events" className="hover:text-primary transition-colors">
             Events
           </Link>
           <Link
-            href="#"
+            href="#contact"
             className="hover:text-primary transition-colors"
-            prefetch={false}
           >
             Contact
           </Link>
@@ -67,27 +50,27 @@ const AppNavBar = () => {
               </div>
 
               <div className="flex justify-end mt-12 w-full">
-                <Link href="/#about" className="text-sm  hover:text-primary ">
+                <Link href="/" className="text-sm  hover:text-primary ">
                   Home
                 </Link>
               </div>
               <div className="flex justify-end mt-12 w-full">
-                <Link href="/events" className="text-sm  hover:text-primary">
+                <Link href="/shop" className="text-sm  hover:text-primary">
                   Shop
                 </Link>
               </div>
               <div className="flex justify-end mt-12 w-full">
-                <Link href="/#contact" className="text-sm  hover:text-primary">
+                <Link href="/#about" className="text-sm  hover:text-primary">
                   About
                 </Link>
               </div>
               <div className="flex justify-end mt-12 w-full">
-                <Link href="/services" className="text-sm  hover:text-primary">
+                <Link href="/events" className="text-sm  hover:text-primary">
                   Events
                 </Link>
               </div>
               <div className="flex justify-end mt-12 w-full">
-                <Link href="/services" className="text-sm  hover:text-primary">
+                <Link href="#contact" className="text-sm  hover:text-primary">
                   Contact
                 </Link>
               </div>

@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const MainSection = () => {
   return (
-    <section className="bg-[url('/hero-bg.jpg')] bg-cover bg-center py-20 md:py-32 lg:py-40 text-center text-primary-foreground">
+    <section className="py-20 md:py-32 lg:py-40 text-center text-primary-foreground">
       <div className="container mx-auto px-4 md:px-6 lg:px-10">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
           Discover the Art of Coffee
