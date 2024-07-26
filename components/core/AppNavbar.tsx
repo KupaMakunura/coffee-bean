@@ -3,6 +3,8 @@ import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import Headroom from "react-headroom";
+import { Avatar } from "../ui/avatar";
+import { User, User2 } from "lucide-react";
 const AppNavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
@@ -20,10 +22,16 @@ const AppNavBar = () => {
           <Link href="/shop" className="hover:text-primary hover:font-semibold">
             Shop
           </Link>
-          <Link href="/#about" className="hover:text-primary hover:font-semibold">
+          <Link
+            href="/#about"
+            className="hover:text-primary hover:font-semibold"
+          >
             About
           </Link>
-          <Link href="/events" className="hover:text-primary hover:font-semibold">
+          <Link
+            href="/events"
+            className="hover:text-primary hover:font-semibold"
+          >
             Events
           </Link>
           <Link
@@ -32,6 +40,9 @@ const AppNavBar = () => {
           >
             Contact
           </Link>
+          <div className="h-10 w-10 hover:bg-slate-400 rounded-full flex items-center justify-center bg-white hover:cursor-pointer">
+            <User size={25} />
+          </div>
         </div>
 
         <div className="md:hidden w-full flex items-center justify-end">
