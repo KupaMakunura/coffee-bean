@@ -13,48 +13,56 @@ import e4 from "@/public/images/e4.jpg";
 // coffee constants
 export const coffeeItems: ShoppingItem[] = [
   {
+    id: "1a2b3c4d-5e6f-7g8h-9i0j-1k2l3m4n5o6p",
     name: "Espresso",
     img: c1,
     description: "Rich and bold shot",
     price: 3.0,
   },
   {
+    id: "2b3c4d5e-6f7g-8h9i-0j1k-2l3m4n5o6p7q",
     name: "Latte",
     img: c2,
     description: "Smooth milk blend",
     price: 4.5,
   },
   {
+    id: "3c4d5e6f-7g8h-9i0j-1k2l-3m4n5o6p7q8r",
     name: "Cappuccino",
     img: c3,
     description: "Frothy and creamy",
     price: 4.0,
   },
   {
+    id: "4d5e6f7g-8h9i-0j1k-2l3m-4n5o6p7q8r9s",
     name: "Americano",
     img: c4,
     description: "Strong and simple",
     price: 3.5,
   },
   {
+    id: "5e6f7g8h-9i0j-1k2l-3m4n-5o6p7q8r9s0t",
     name: "Mocha",
     img: c2,
     description: "Chocolate and coffee",
     price: 5.0,
   },
   {
+    id: "6f7g8h9i-0j1k-2l3m-4n5o-6p7q8r9s0t1u",
     name: "Macchiato",
     img: c3,
     description: "Espresso with foam",
     price: 4.2,
   },
   {
+    id: "7g8h9i0j-1k2l-3m4n-5o6p-7q8r9s0t1u2v",
     name: "Flat White",
     img: c4,
     description: "Silky smooth texture",
     price: 4.8,
   },
   {
+    id: "8h9i0j1k-2l3m-4n5o-6p7q-8r9s0t1u2v3w",
     name: "Iced Coffee",
     img: c1,
     description: "Chilled and refreshing",
@@ -63,51 +71,58 @@ export const coffeeItems: ShoppingItem[] = [
 ];
 
 // brewing equipment constants
-
 export const brewingItems: ShoppingItem[] = [
   {
+    id: "9i0j1k2l-3m4n-5o6p-7q8r-9s0t1u2v3w4x",
     name: "French Press",
     img: e1,
     description: "Classic coffee maker",
     price: 25.0,
   },
   {
+    id: "0j1k2l3m-4n5o-6p7q-8r9s-0t1u2v3w4x5y",
     name: "Pour Over",
     img: e2,
     description: "Precision brewing",
     price: 20.0,
   },
   {
+    id: "1k2l3m4n-5o6p-7q8r-9s0t-1u2v3w4x5y6z",
     name: "Espresso Machine",
     img: e3,
     description: "Professional shots",
     price: 150.0,
   },
   {
+    id: "2l3m4n5o-6p7q-8r9s-0t1u-2v3w4x5y6z7a",
     name: "Coffee Grinder",
     img: e4,
     description: "Freshly ground beans",
     price: 30.0,
   },
   {
+    id: "3m4n5o6p-7q8r-9s0t-1u2v-3w4x5y6z7a8b",
     name: "AeroPress",
     img: e2,
     description: "Portable coffee press",
     price: 35.0,
   },
   {
+    id: "4n5o6p7q-8r9s-0t1u-2v3w-4x5y6z7a8b9c",
     name: "Moka Pot",
     img: e3,
     description: "Stovetop espresso maker",
     price: 20.0,
   },
   {
+    id: "5o6p7q8r-9s0t-1u2v-3w4x-5y6z7a8b9c0d",
     name: "Drip Coffee Maker",
     img: e4,
     description: "Easy home brewing",
     price: 40.0,
   },
   {
+    id: "6p7q8r9s-0t1u-2v3w-4x5y-6z7a8b9c0d1e",
     name: "Cold Brew Maker",
     img: e1,
     description: "Smooth cold brew",
