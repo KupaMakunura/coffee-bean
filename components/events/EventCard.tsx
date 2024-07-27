@@ -1,6 +1,7 @@
 import { Bookmark, CalendarIcon, ClockIcon, MapPin } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { Event } from "@/interfaces";
+import { Button } from "../ui/button";
 
 const EventCard = (props: Event) => {
   return (
@@ -8,7 +9,9 @@ const EventCard = (props: Event) => {
       <CardHeader>
         <div className="flex w-full justify-between">
           <CardTitle>{props.title}</CardTitle>
-          <Bookmark />
+          <Button size="sm" variant="outline">
+            <Bookmark />
+          </Button>
         </div>
 
         <div className="flex-1 space-y-2 py-3">

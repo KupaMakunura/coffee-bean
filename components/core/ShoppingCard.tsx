@@ -4,7 +4,7 @@ import { Card, CardContent } from "../ui/card";
 import Image from "next/image";
 import { ShoppingItem } from "@/interfaces";
 import { useState } from "react";
-import useCartStore from "@/store";
+import useCartStore from "@/store/cart";
 import { useToast } from "../ui/use-toast";
 
 const ShoppingCard = (props: ShoppingItem) => {

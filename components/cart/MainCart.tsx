@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
-import useCartStore from "@/store";
+import useCartStore from "@/store/cart";
 import { Trash } from "lucide-react";
 
 // main component
