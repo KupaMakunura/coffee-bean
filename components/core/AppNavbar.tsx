@@ -1,10 +1,10 @@
 "use client";
-import { Menu, X } from "lucide-react";
+import { Menu, User, X } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import Headroom from "react-headroom";
-import { Avatar } from "../ui/avatar";
-import { User, User2 } from "lucide-react";
+import AccountDropdown from "./AccountDropdown";
+
 const AppNavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
@@ -41,9 +41,7 @@ const AppNavBar = () => {
           >
             Contact
           </Link>
-          <div className="h-10 w-10 hover:bg-slate-400 rounded-full flex items-center justify-center bg-white hover:cursor-pointer">
-            <User size={25} />
-          </div>
+          <AccountDropdown />
         </div>
 
         <div className="md:hidden w-full flex items-center justify-end">
