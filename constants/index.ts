@@ -3,12 +3,22 @@ import c1 from "@/public/images/c1.jpeg";
 import c2 from "@/public/images/c2.jpeg";
 import c3 from "@/public/images/c3.jpeg";
 import c4 from "@/public/images/c4.jpeg";
+import c5 from "@/public/images/c5.jpeg";
+import c6 from "@/public/images/c6.jpeg";
+import c7 from "@/public/images/c7.jpeg";
+import c8 from "@/public/images/c8.jpeg";
 // import the equipment images
 
 import e1 from "@/public/images/e1.jpg";
 import e2 from "@/public/images/e2.jpg";
 import e3 from "@/public/images/e3.jpg";
 import e4 from "@/public/images/e4.jpg";
+import e5 from "@/public/images/e5.jpeg";
+import e6 from "@/public/images/e6.jpeg";
+import e7 from "@/public/images/e7.jpeg";
+import e8 from "@/public/images/e8.jpeg";
+
+// import types
 import { Event } from "@/interfaces";
 
 // coffee constants
@@ -44,28 +54,28 @@ export const coffeeItems: ShoppingItem[] = [
   {
     id: "5e6f7g8h-9i0j-1k2l-3m4n-5o6p7q8r9s0t",
     name: "Mocha",
-    img: c2,
+    img: c5,
     description: "Chocolate and coffee",
     price: 5.0,
   },
   {
     id: "6f7g8h9i-0j1k-2l3m-4n5o-6p7q8r9s0t1u",
     name: "Macchiato",
-    img: c3,
+    img: c6,
     description: "Espresso with foam",
     price: 4.2,
   },
   {
     id: "7g8h9i0j-1k2l-3m4n-5o6p-7q8r9s0t1u2v",
     name: "Flat White",
-    img: c4,
+    img: c7,
     description: "Silky smooth texture",
     price: 4.8,
   },
   {
     id: "8h9i0j1k-2l3m-4n5o-6p7q-8r9s0t1u2v3w",
     name: "Iced Coffee",
-    img: c1,
+    img: c8,
     description: "Chilled and refreshing",
     price: 4.0,
   },
@@ -104,28 +114,28 @@ export const brewingItems: ShoppingItem[] = [
   {
     id: "3m4n5o6p-7q8r-9s0t-1u2v-3w4x5y6z7a8b",
     name: "AeroPress",
-    img: e2,
+    img: e5,
     description: "Portable coffee press",
     price: 35.0,
   },
   {
     id: "4n5o6p7q-8r9s-0t1u-2v3w-4x5y6z7a8b9c",
     name: "Moka Pot",
-    img: e3,
+    img: e6,
     description: "Stovetop espresso maker",
     price: 20.0,
   },
   {
     id: "5o6p7q8r-9s0t-1u2v-3w4x-5y6z7a8b9c0d",
     name: "Drip Coffee Maker",
-    img: e4,
+    img: e7,
     description: "Easy home brewing",
     price: 40.0,
   },
   {
     id: "6p7q8r9s-0t1u-2v3w-4x5y-6z7a8b9c0d1e",
     name: "Cold Brew Maker",
-    img: e1,
+    img: e8,
     description: "Smooth cold brew",
     price: 25.0,
   },
