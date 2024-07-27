@@ -12,7 +12,7 @@ const AppNavBar = () => {
     <Headroom>
       <div className="flex w-full  h-[70px] py-3 px-3 shadow-md bg-transparent">
         <Link href="/" className="w-full items-center flex space-x-2">
-          <span className="md:text-lg max-md:text-base  font-semibold">
+          <span className="md:text-lg max-md:text-xs  font-semibold">
             Bean Boutique Coffee Shop
           </span>
         </Link>
@@ -45,7 +45,20 @@ const AppNavBar = () => {
           <Button>Sign In</Button>
         </div>
 
-        <div className="md:hidden w-full flex items-center justify-end">
+        <div className="md:hidden w-full flex items-center justify-between">
+           {/* links to cart */}
+           <Link href="/cart" className="flex">
+            <LinkTooltip message="Your cart items">
+              <ShoppingCart size={20} className="hover:text-primary" />
+            </LinkTooltip>
+          </Link>
+
+          <Link href="/cart" className="flex">
+            <LinkTooltip message="Your events">
+              <MapPin size={20} className="hover:text-primary" />
+            </LinkTooltip>
+          </Link>
+          <Button>Sign In</Button>
           <Menu size={30} onClick={() => setIsOpen(!isOpen)} />
         </div>
         {/* handle when the menu is Open */}
