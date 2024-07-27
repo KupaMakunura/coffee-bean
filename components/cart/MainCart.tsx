@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
 import useCartStore from "@/store/cart";
+import useEventStore from "@/store/events";
 import { Trash } from "lucide-react";
 
 // main component
@@ -17,7 +18,9 @@ const MainCart = () => {
     0
   );
 
- 
+  // events state
+  const bookmarkedEvents = useEventStore((state) => state.events);
+  const handleRemoveFromBookmarks = useEventStore((state) => state.removeEvent);
 
   return (
     <div className="container mx-auto py-12 px-4 md:px-6">
@@ -85,11 +88,11 @@ const MainCart = () => {
             </div>
           )}
         </div>
-        {/* <div className="bg-background rounded-lg shadow-lg p-6">
+        <div className="bg-background rounded-lg shadow-lg p-6">
           <h2 className="text-2xl font-bold mb-4">Bookmarked Events</h2>
           {bookmarkedEvents.length === 0 ? (
             <p className="text-muted-foreground">
-              You haven't bookmarked any events yet.
+              You haven&apos;t bookmarked any events yet.
             </p>
           ) : (
             <div className="space-y-4">
@@ -99,7 +102,7 @@ const MainCart = () => {
                   className="flex items-center justify-between"
                 >
                   <div>
-                    <h3 className="font-semibold">{event.name}</h3>
+                    <h3 className="font-semibold">{event.title}</h3>
                     <p className="text-muted-foreground">
                       {event.date} - {event.location}
                     </p>
@@ -109,13 +112,13 @@ const MainCart = () => {
                     variant="ghost"
                     onClick={() => handleRemoveFromBookmarks(event.id)}
                   >
-                    <TrashIcon className="h-4 w-4" />
+                    <Trash className="h-4 w-4" />
                   </Button>
                 </div>
               ))}
             </div>
           )}
-        </div> */}
+        </div>
       </div>
     </div>
   );

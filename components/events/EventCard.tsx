@@ -1,15 +1,37 @@
+"use client";
 import { Bookmark, CalendarIcon, ClockIcon, MapPin } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { Event } from "@/interfaces";
 import { Button } from "../ui/button";
+import useEventStore from "@/store/events";
+import { useToast } from "../ui/use-toast";
 
 const EventCard = (props: Event) => {
+  const addEvent = useEventStore((state) => state.addEvent);
+  const { toast } = useToast();
+
+  const handleBookmarkEvent = () => {
+    // add event to bookmarked events
+    addEvent(props);
+
+    // show toast notification
+    toast({
+      variant: "default",
+      className: "bg-green-500 text-white",
+      description: "Event successfully added to bookmarks",
+      title: "Events",
+    });
+  };
   return (
     <Card className="w-full border">
       <CardHeader>
         <div className="flex w-full justify-between">
           <CardTitle>{props.title}</CardTitle>
-          <Button size="sm" variant="outline">
+          <Button
+            size="sm"
+            variant="outline"
+            onClick={() => handleBookmarkEvent()}
+          >
             <Bookmark />
           </Button>
         </div>
