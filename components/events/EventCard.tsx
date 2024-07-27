@@ -1,4 +1,4 @@
-import { CalendarIcon, ClockIcon, MapPin } from "lucide-react";
+import { Bookmark, CalendarIcon, ClockIcon, MapPin } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { Event } from "@/interfaces";
 
@@ -6,7 +6,11 @@ const EventCard = (props: Event) => {
   return (
     <Card className="w-full border">
       <CardHeader>
-        <CardTitle>{props.title}</CardTitle>
+        <div className="flex w-full justify-between">
+          <CardTitle>{props.title}</CardTitle>
+          <Bookmark />
+        </div>
+
         <div className="flex-1 space-y-2 py-3">
           <div className="flex items-center gap-2">
             <CalendarIcon className="w-4 h-4" />

@@ -6,11 +6,6 @@ import EventCard from "./EventCard";
 import { coffeeEvents } from "@/constants";
 
 const MainEventSection = () => {
-  // search params state
-
-  // loaders
-  const loaders = [0, 1, 2, 3, 4];
-
   // handle search text
 
   return (
@@ -22,10 +17,10 @@ const MainEventSection = () => {
             <div className="flex-1 w-full justify-start space-y-3">
               <div className="space-y-1">
                 <p className="max-md:text-xl font-semibold md:text-3xl">
-                  Upcoming Events
+                  Upcoming Coffee Events
                 </p>
                 <p className="max-md:text-base md:text-sm">
-                  Browse our upcoming events and plan your visit.
+                  Browse, save upcoming events and plan your visit.
                 </p>
               </div>
               {/* Search input and the button */}
@@ -34,8 +29,8 @@ const MainEventSection = () => {
               </div>
             </div>
 
-            <ScrollArea className="h-full overflow-y-auto md:px-5">
-              <div className="grid max-md:grid-cols-1 md:grid-cols-2 gap-4">
+            <ScrollArea className="h-full overflow-y-auto">
+              <div className="grid max-md:grid-cols-1 md:grid-cols-3 gap-4">
                 {/* the actual data when loaded */}
                 {coffeeEvents?.map((event, index) => (
                   <EventCard

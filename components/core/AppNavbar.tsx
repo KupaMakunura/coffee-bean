@@ -22,17 +22,18 @@ const AppNavBar = () => {
           <Link href="/shop" className="hover:text-primary hover:font-semibold">
             Shop
           </Link>
-          <Link
-            href="/#about"
-            className="hover:text-primary hover:font-semibold"
-          >
-            About
-          </Link>
+
           <Link
             href="/events"
             className="hover:text-primary hover:font-semibold"
           >
             Events
+          </Link>
+          <Link
+            href="/#about"
+            className="hover:text-primary hover:font-semibold"
+          >
+            About
           </Link>
           <Link
             href="/#contact"

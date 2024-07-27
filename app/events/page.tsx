@@ -1,9 +1,11 @@
-import React from 'react'
+import MainEventSection from "@/components/events/MainEventSection";
 
 const EventsPage = () => {
   return (
-    <div>EventsPage</div>
-  )
-}
+    <div className="flex w-full">
+      <MainEventSection />
+    </div>
+  );
+};
 
-export default EventsPage
+export default EventsPage;
