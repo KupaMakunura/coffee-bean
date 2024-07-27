@@ -9,6 +9,7 @@ import e1 from "@/public/images/e1.jpg";
 import e2 from "@/public/images/e2.jpg";
 import e3 from "@/public/images/e3.jpg";
 import e4 from "@/public/images/e4.jpg";
+import { Event } from "@/interfaces";
 
 // coffee constants
 export const coffeeItems: ShoppingItem[] = [
@@ -127,5 +128,131 @@ export const brewingItems: ShoppingItem[] = [
     img: e1,
     description: "Smooth cold brew",
     price: 25.0,
+  },
+];
+
+export const coffeeEvents: Event[] = [
+  {
+    id: 1,
+    title: "Morning Brew Meetup",
+    date: "2024-08-01",
+    time: "08:00 AM",
+    location: "Downtown Cafe",
+    description:
+      "Start your day with a fresh cup of coffee and great conversations.",
+  },
+  {
+    id: 2,
+    title: "Coffee Lovers' Evening",
+    date: "2024-08-02",
+    time: "06:00 PM",
+    location: "Central Park Coffee House",
+    description:
+      "An evening event for coffee enthusiasts to enjoy different brews.",
+  },
+  {
+    id: 3,
+    title: "Coffee and Networking",
+    date: "2024-08-03",
+    time: "10:00 AM",
+    location: "City Business Hub",
+    description: "Network with professionals over a cup of coffee.",
+  },
+  {
+    id: 4,
+    title: "Latte Art Workshop",
+    date: "2024-08-04",
+    time: "03:00 PM",
+    location: "Artisan Coffee Studio",
+    description: "Learn the art of creating beautiful latte designs.",
+  },
+  {
+    id: 5,
+    title: "Sunday Coffee Brunch",
+    date: "2024-08-05",
+    time: "11:00 AM",
+    location: "Seaside Cafe",
+    description: "Enjoy a delicious brunch with a variety of coffee blends.",
+  },
+  {
+    id: 6,
+    title: "Coffee Tasting Event",
+    date: "2024-08-06",
+    time: "02:00 PM",
+    location: "Brew Masters",
+    description:
+      "Taste and evaluate different types of coffee from around the world.",
+  },
+  {
+    id: 7,
+    title: "Coffee and Books",
+    date: "2024-08-07",
+    time: "04:00 PM",
+    location: "Book Haven Cafe",
+    description: "Combine your love of coffee and books at this relaxed event.",
+  },
+  {
+    id: 8,
+    title: "Coffee and Dessert Pairing",
+    date: "2024-08-08",
+    time: "07:00 PM",
+    location: "Sweet Treats Cafe",
+    description: "Discover the perfect coffee and dessert combinations.",
+  },
+  {
+    id: 9,
+    title: "Espresso Lovers' Meetup",
+    date: "2024-08-09",
+    time: "09:00 AM",
+    location: "Urban Coffee Lounge",
+    description: "A meetup for those who love a strong cup of espresso.",
+  },
+  {
+    id: 10,
+    title: "Coffee Brewing Techniques",
+    date: "2024-08-10",
+    time: "01:00 PM",
+    location: "Brew Lab",
+    description: "Learn various coffee brewing techniques from the experts.",
+  },
+  {
+    id: 11,
+    title: "Outdoor Coffee Picnic",
+    date: "2024-08-11",
+    time: "05:00 PM",
+    location: "Riverside Park",
+    description: "Enjoy coffee in the great outdoors with friends.",
+  },
+  {
+    id: 12,
+    title: "Coffee and Music Night",
+    date: "2024-08-12",
+    time: "08:00 PM",
+    location: "Jazz Cafe",
+    description: "Enjoy live music while sipping your favorite coffee.",
+  },
+  {
+    id: 13,
+    title: "Coffee Science Talk",
+    date: "2024-08-13",
+    time: "10:30 AM",
+    location: "Techno Coffee Lab",
+    description: "Learn about the science behind coffee making.",
+  },
+  {
+    id: 14,
+    title: "Coffee History Tour",
+    date: "2024-08-14",
+    time: "02:30 PM",
+    location: "Old Town Cafe",
+    description: "A guided tour through the history of coffee.",
+  },
+  {
+    id: 15,
+    title: "Coffee Art Exhibition",
+    date: "2024-08-15",
+    time: "06:30 PM",
+    location: "Gallery Cafe",
+    description: "An exhibition showcasing coffee-related artwork.",
   },
 ];
