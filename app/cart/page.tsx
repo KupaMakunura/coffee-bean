@@ -1,9 +1,11 @@
-import React from 'react'
+import MainCart from "@/components/cart/MainCart";
 
 const page = () => {
   return (
-    <div>page</div>
-  )
-}
+    <div className="w-full">
+      <MainCart />
+    </div>
+  );
+};
 
-export default page
+export default page;

@@ -12,11 +12,11 @@ interface Store {
   removeFromCart: (id: string) => void;
   updateQuantity: (id: string, quantity: number) => void;
   clearCart: () => void;
-  getTotalPrice: () => number;
 }
 
 const useCartStore = create<Store>((set, get) => ({
   cart: [],
+  cartTotal: 0,
   //   add item to cart
   addToCart(item) {
     const cart = get().cart;
@@ -51,14 +51,6 @@ const useCartStore = create<Store>((set, get) => ({
     set({ cart: [] });
   },
   //   get total price
-
-  getTotalPrice() {
-    return get().cart.reduce(
-      (total, item) => total + item.price * item.quantity,
-      0
-    );
-  },
 }));
-
 
 export default useCartStore;

@@ -12,7 +12,12 @@ const MainCart = () => {
   const cart = useCartStore((state) => state.cart);
   const updateQuantity = useCartStore((state) => state.updateQuantity);
   const removeFromCart = useCartStore((state) => state.removeFromCart);
-  const cartTotal = useCartStore((state) => state.getTotalPrice);
+  const totalPrice = cart.reduce(
+    (total, item) => total + item.price * item.quantity,
+    0
+  );
+
+ 
 
   return (
     <div className="container mx-auto py-12 px-4 md:px-6">
@@ -30,10 +35,10 @@ const MainCart = () => {
                 >
                   <div className="flex items-center gap-4">
                     <Image
-                      src="/placeholder.svg"
-                      alt={item.img}
-                      width={64}
-                      height={64}
+                      src={item.img}
+                      alt="Cart Item"
+                      width={50}
+                      height={50}
                       className="rounded-md"
                     />
                     <div>
@@ -72,7 +77,7 @@ const MainCart = () => {
               <Separator />
               <div className="flex items-center justify-between">
                 <h3 className="font-semibold">Total</h3>
-                <p className="text-2xl font-bold">${cartTotal.toString()}</p>
+                <p className="text-2xl font-bold">${totalPrice}</p>
               </div>
               <Button size="lg" className="w-full">
                 Proceed to Checkout
@@ -117,4 +122,3 @@ const MainCart = () => {
 };
 
 export default MainCart;
-
