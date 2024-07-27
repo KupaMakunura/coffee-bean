@@ -1,9 +1,10 @@
 "use client";
-import { Menu, User, X } from "lucide-react";
+import { MapPin, Menu, ShoppingCart, X } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import Headroom from "react-headroom";
-import AccountDropdown from "./AccountDropdown";
+import { Button } from "../ui/button";
+import LinkTooltip from "./LinkTooltip";
 
 const AppNavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,19 +30,19 @@ const AppNavBar = () => {
           >
             Events
           </Link>
-          <Link
-            href="/#about"
-            className="hover:text-primary hover:font-semibold"
-          >
-            About
+          {/* links to cart */}
+          <Link href="/cart" className="flex">
+            <LinkTooltip message="Your cart items">
+              <ShoppingCart size={20} className="hover:text-primary" />
+            </LinkTooltip>
           </Link>
-          <Link
-            href="/#contact"
-            className="hover:text-primary hover:font-semibold"
-          >
-            Contact
+
+          <Link href="/cart" className="flex">
+            <LinkTooltip message="Your events">
+              <MapPin size={20} className="hover:text-primary" />
+            </LinkTooltip>
           </Link>
-          <AccountDropdown />
+          <Button>Sign In</Button>
         </div>
 
         <div className="md:hidden w-full flex items-center justify-end">
