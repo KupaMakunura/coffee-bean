@@ -7,6 +7,7 @@ import Headroom from "react-headroom";
 import { Button } from "../ui/button";
 import { useToast } from "../ui/use-toast";
 import LinkTooltip from "./LinkTooltip";
+import AppAvatar from "./AppAvatar";
 
 const AppNavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -71,7 +72,7 @@ const AppNavBar = () => {
             </LinkTooltip>
           </Link>
           {status === "authenticated" ? (
-            <p>In</p>
+            <AppAvatar img={session?.user?.image!} />
           ) : (
             <Button onClick={() => handleGoogleSignIn()}>Sign In</Button>
           )}
@@ -90,7 +91,11 @@ const AppNavBar = () => {
               <MapPin size={20} className="hover:text-primary" />
             </LinkTooltip>
           </Link>
-          <Button onClick={() => handleGoogleSignIn()}>Sign In</Button>
+          {status === "authenticated" ? (
+            <AppAvatar img={session?.user?.image!} />
+          ) : (
+            <Button onClick={() => handleGoogleSignIn()}>Sign In</Button>
+          )}
           <Menu size={30} onClick={() => setIsOpen(!isOpen)} />
         </div>
         {/* handle when the menu is Open */}

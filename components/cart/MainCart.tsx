@@ -6,6 +6,8 @@ import Image from "next/image";
 import useCartStore from "@/store/cart";
 import useEventStore from "@/store/events";
 import { Trash } from "lucide-react";
+import { useSession, signIn } from "next-auth/react";
+import { useToast } from "@/components/ui/use-toast";
 
 // main component
 const MainCart = () => {
@@ -21,6 +23,54 @@ const MainCart = () => {
   // events state
   const bookmarkedEvents = useEventStore((state) => state.events);
   const handleRemoveFromBookmarks = useEventStore((state) => state.removeEvent);
+
+  // session
+  const { data: session, status } = useSession();
+
+  // get toast
+  const { toast } = useToast();
+
+  // handle google sign in
+  const handleGoogleSignIn = async () => {
+    const response = await signIn("google", { callbackUrl: "/cart" });
+
+    if (response?.error) {
+      toast({
+        variant: "destructive",
+        description: "An error occurred while signing in",
+        title: "Google Sign In",
+      });
+    }
+
+    if (response?.ok) {
+      toast({
+        variant: "default",
+        className: "bg-green-500 text-white",
+        description: "You have successfully signed in with Google",
+        title: "Google Sign In",
+      });
+    }
+  };
+
+  if (status === "unauthenticated") {
+    return (
+      <div className="container mx-auto py-12 px-4 md:px-6">
+        <div className="flex flex-col items-center justify-center space-y-4">
+          <h2 className="text-2xl font-bold">Shopping Cart</h2>
+          <p className="text-muted-foreground">
+            You need to sign in to view your cart and events
+          </p>
+          <Button
+            variant="outline"
+            className="hover:bg-primary hover:text-white"
+            onClick={handleGoogleSignIn}
+          >
+            Continue with Google
+          </Button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="container mx-auto py-12 px-4 md:px-6">
