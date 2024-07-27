@@ -11,7 +11,7 @@ const quicksand = localFont({
 export const metadata: Metadata = {
   title: "Bean Boutique Coffee Shop",
   description:
-    "Welcome to AFM Triumphant Life Center.A place of faith, hope, and community. Join us for inspiring services, uplifting music, and a warm fellowship.",
+    "Welcome to Bean Boutique Coffee Shop. Enjoy our premium coffee blends, cozy atmosphere, and friendly service. A perfect place to relax, work, or catch up with friends. Explore our selection of brewing equipment for the perfect coffee experience at home.",
 };
 
 export default function RootLayout({

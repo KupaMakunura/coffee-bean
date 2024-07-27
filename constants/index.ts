@@ -256,3 +256,32 @@ export const coffeeEvents: Event[] = [
     description: "An exhibition showcasing coffee-related artwork.",
   },
 ];
+
+interface Link {
+  title: string;
+  href: string;
+}
+
+export const links: Link[] = [
+  {
+    title: "Home",
+    href: "/",
+  },
+  {
+    title: "Events",
+    href: "/events",
+  },
+  {
+    title: "Shop",
+    href: "/shop",
+  },
+  {
+    title: "About",
+    href: "/#about",
+  },
+
+  {
+    title: "Contact",
+    href: "/#contact",
+  },
+];
