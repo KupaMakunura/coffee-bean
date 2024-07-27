@@ -25,7 +25,7 @@ const MainCart = () => {
   const handleRemoveFromBookmarks = useEventStore((state) => state.removeEvent);
 
   // session
-  const { data: session, status } = useSession();
+  const { status } = useSession();
 
   // get toast
   const { toast } = useToast();

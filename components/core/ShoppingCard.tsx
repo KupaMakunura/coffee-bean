@@ -6,6 +6,7 @@ import { ShoppingItem } from "@/interfaces";
 import { useState } from "react";
 import useCartStore from "@/store/cart";
 import { useToast } from "../ui/use-toast";
+import { useSession } from "next-auth/react";
 
 const ShoppingCard = (props: ShoppingItem) => {
   // set quantity state
@@ -14,18 +15,29 @@ const ShoppingCard = (props: ShoppingItem) => {
   const addToCart = useCartStore((state) => state.addToCart);
   const { toast } = useToast();
 
+  // session
+  const { status } = useSession();
+
   // handle add to cart
   const handleAddToCart = () => {
-    // add items to global store
-    addToCart({ ...props, quantity });
+    if (status === "unauthenticated") {
+      toast({
+        variant: "destructive",
+        description: "You need to sign in to add items to cart",
+        title: "Cart",
+      });
+    } else {
+      // add items to global store
+      addToCart({ ...props, quantity });
 
-    // show the toast
-    toast({
-      variant: "default",
-      className: "bg-green-500 text-white",
-      description: "Item successfully added to cart",
-      title:"Cart"
-    });
+      // show the toast
+      toast({
+        variant: "default",
+        className: "bg-green-500 text-white",
+        description: "Item successfully added to cart",
+        title: "Cart",
+      });
+    }
   };
 
   return (
