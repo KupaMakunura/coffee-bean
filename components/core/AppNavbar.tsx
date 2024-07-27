@@ -1,13 +1,41 @@
 "use client";
 import { MapPin, Menu, ShoppingCart, X } from "lucide-react";
+import { signIn, useSession } from "next-auth/react";
 import Link from "next/link";
 import { useState } from "react";
 import Headroom from "react-headroom";
 import { Button } from "../ui/button";
+import { useToast } from "../ui/use-toast";
 import LinkTooltip from "./LinkTooltip";
 
 const AppNavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { toast } = useToast();
+
+  // next auth session
+
+  const { data: session, status } = useSession();
+
+  const handleGoogleSignIn = async () => {
+    const response = await signIn("google", { callbackUrl: "/cart" });
+
+    if (response?.error) {
+      toast({
+        variant: "destructive",
+        description: "An error occurred while signing in",
+        title: "Google Sign In",
+      });
+    }
+
+    if (response?.ok) {
+      toast({
+        variant: "default",
+        className: "bg-green-500 text-white",
+        description: "You have successfully signed in with Google",
+        title: "Google Sign In",
+      });
+    }
+  };
   return (
     <Headroom>
       <div className="flex w-full  h-[70px] py-3 px-3 shadow-md bg-transparent">
@@ -42,12 +70,16 @@ const AppNavBar = () => {
               <MapPin size={20} className="hover:text-primary" />
             </LinkTooltip>
           </Link>
-          <Button>Sign In</Button>
+          {status === "authenticated" ? (
+            <p>In</p>
+          ) : (
+            <Button onClick={() => handleGoogleSignIn()}>Sign In</Button>
+          )}
         </div>
 
         <div className="md:hidden w-full flex items-center justify-between">
-           {/* links to cart */}
-           <Link href="/cart" className="flex">
+          {/* links to cart */}
+          <Link href="/cart" className="flex">
             <LinkTooltip message="Your cart items">
               <ShoppingCart size={20} className="hover:text-primary" />
             </LinkTooltip>
@@ -58,7 +90,7 @@ const AppNavBar = () => {
               <MapPin size={20} className="hover:text-primary" />
             </LinkTooltip>
           </Link>
-          <Button>Sign In</Button>
+          <Button onClick={() => handleGoogleSignIn()}>Sign In</Button>
           <Menu size={30} onClick={() => setIsOpen(!isOpen)} />
         </div>
         {/* handle when the menu is Open */}

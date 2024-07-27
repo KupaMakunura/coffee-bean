@@ -14,27 +14,36 @@ const routeHandler = NextAuth({
     }),
   ],
   callbacks: {
-    async jwt({ token, user, session, trigger }) {
-      if (trigger === "update" && session?.user) {
-        return { ...token, ...session.user };
+    async jwt({ token, user, account }) {
+      // Handle only Google authentication
+      if (account?.provider === "google") {
+        if (user) {
+          token.id = user.id;
+          token.email = user.email;
+          token.name = user.name;
+          token.image = user.image;
+          // Add any other user properties you want to include in the token
+        }
       }
-
-      if (user) {
-        return { ...token, ...user };
-      }
-
       return token;
     },
     async session({ session, token }) {
-      session.user = token as any;
-
+      // Only include Google authenticated user in the session
+      if (token.email) {
+        session.user = {
+          email: token.email,
+          name: token.name,
+          image: token.image as string,
+          // Include any other properties you stored in the token
+        };
+      }
       return session;
     },
   },
+
   pages: {
     signIn: "/login",
   },
 });
 
 export { routeHandler as GET, routeHandler as POST };
-
