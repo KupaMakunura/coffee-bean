@@ -23,6 +23,7 @@ const MainCart = () => {
   // events state
   const bookmarkedEvents = useEventStore((state) => state.events);
   const handleRemoveFromBookmarks = useEventStore((state) => state.removeEvent);
+  const clearCart = useCartStore((state) => state.clearCart);
 
   // session
   const { status } = useSession();
@@ -50,6 +51,17 @@ const MainCart = () => {
         title: "Google Sign In",
       });
     }
+  };
+
+  // handle checkout
+  const handleCheckout = () => {
+    clearCart();
+    toast({
+      variant: "default",
+      className: "bg-green-500 text-white",
+      description: `You have successfully placed an order for $${totalPrice}`,
+      title: "Checkout",
+    });
   };
 
   if (status === "unauthenticated") {
@@ -132,7 +144,11 @@ const MainCart = () => {
                 <h3 className="font-semibold">Total</h3>
                 <p className="text-2xl font-bold">${totalPrice}</p>
               </div>
-              <Button size="lg" className="w-full">
+              <Button
+                size="lg"
+                className="w-full"
+                onClick={() => handleCheckout()}
+              >
                 Proceed to Checkout
               </Button>
             </div>
