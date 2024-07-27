@@ -8,7 +8,7 @@ interface CartItem extends ShoppingItem {
 // store interface
 interface Store {
   cart: CartItem[];
-  addToCart: (item: ShoppingItem) => void;
+  addToCart: (item: CartItem) => void;
   removeFromCart: (id: string) => void;
   updateQuantity: (id: string, quantity: number) => void;
   clearCart: () => void;

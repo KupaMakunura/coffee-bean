@@ -15,6 +15,7 @@ const CoffeeSection = () => {
           {coffeeItems.map((item, index) => (
             <ShoppingCard
               key={index}
+              id={item.id}
               img={item.img}
               name={item.name}
               description={item.description}
