@@ -18,7 +18,7 @@ const AppNavBar = () => {
   const { data: session, status } = useSession();
 
   const handleGoogleSignIn = async () => {
-    const response = await signIn("google", { callbackUrl: "/cart" });
+    const response = await signIn("google", { callbackUrl: "/" });
 
     if (response?.error) {
       toast({
