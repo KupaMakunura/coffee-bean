@@ -3,10 +3,23 @@
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "../ui/scroll-area";
 import EventCard from "./EventCard";
-import { coffeeEvents } from "@/constants";
+import { coffeeEvents as events } from "@/constants";
+import { useState } from "react";
 
 const MainEventSection = () => {
-  // handle search text
+  const [coffeeEvents, setCoffeeEvents] = useState(events);
+
+  //  handle search event
+  const handleSearch = (searchText: string) => {
+    const searchResult = events.filter((event) => {
+      return (
+        event.title.toLowerCase().includes(searchText.toLowerCase()) ||
+        event.location.toLowerCase().includes(searchText.toLowerCase()) ||
+        event.description.toLowerCase().includes(searchText.toLowerCase())
+      );
+    });
+    setCoffeeEvents(searchResult);
+  };
 
   return (
     <div className="md:overflow-hidden md:h-screen">
@@ -25,7 +38,10 @@ const MainEventSection = () => {
               </div>
               {/* Search input and the button */}
               <div className="flex space-x-3">
-                <Input placeholder="Search events by title,location and description ..." />
+                <Input
+                  placeholder="Search events by title,location and description ..."
+                  onChange={(event) => handleSearch(event.target.value)}
+                />
               </div>
             </div>
 
